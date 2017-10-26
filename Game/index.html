@@ -51,7 +51,6 @@
                 alert("Sorry, your browser doesn't support canvas, please use Firefox3.6+, Safari5+, Chrome, IE9+ etc.");
                 return;
             }
-
             //adjust canvas
             var bw = window.innerWidth || document.body.offsetWidth;
             var bh = window.innerHeight || document.body.offsetHeight;
@@ -63,23 +62,18 @@
                 document.getElementById("main").style.width = bw + "px";
             }
             if (canvas.height < bh) canvas.style.marginTop = (bh - canvas.height >> 1) + "px";
-
             var txt = document.getElementById("textContainer");
             txt.style.left = (bw - txt.offsetWidth >> 1) + "px";
-
             playAudio();
             //start game
             ddz.startup();
         }
-
-
         function playAudio() {
             audioObj = createAudio("myAudioObj");
             fakeClick(function () {
                 audioObj.play();
             });
         }
-
         function createAudio(id) {
             var audio = new Audio("sounds/bg.mp3");
             audio.loop = true;
@@ -88,7 +82,6 @@
             document.body.appendChild(audio);
             return audio;
         }
-
         function fakeClick(callback) {
             var aTag = document.createElement("a");
             aTag.id = "fakeClickLink";
@@ -97,7 +90,6 @@
                 callback();
             }, false);
             document.body.appendChild(aTag);
-
             if (document.createEvent) {
                 var evt = document.createEvent("MouseEvents");
                 if (evt.initMouseEvent) {
@@ -113,13 +105,20 @@
 
 <body onload="startGame();">
     <div id="main" style="width: 1000px;">
+        <div style="text-align:center">
+            <h1>逗斗地主</h1>
+        </div>
         <div id="canvasContainer">
-            <canvas id="canvas" width="1000" height="600" style="background-image: url(/images/bg.png); background-position: 50% 50%;">Sorry, your browser doesn't support canvas, please use Firefox3.6+, Safari5+, Chrome, IE9+ etc.</canvas>
+            <canvas id="canvas" width="1000" height="600" style="background-image: url(http://www.riaidea.com/html5/ddz/images/bg.png); background-position: 50% 50%;">Sorry, your browser doesn't support canvas, please use Firefox3.6+, Safari5+, Chrome, IE9+ etc.</canvas>
         </div>
         <div id="textContainer" style="left: 451px;">
             <span id="status"></span>
         </div>
-    </div>
+        <div style="text-align:center">
+            <img src="../img/zfb.png" alt="" width="128" height="128" /><br />
+            <p>可通过支付宝直接捐助本站哦。</p>
+        </div>
+    </div>	
 
 
 
@@ -128,7 +127,7 @@
         var _hmt = _hmt || [];
         (function () {
             var hm = document.createElement("script");
-            //hm.src = "//hm.baidu.com/hm.js?15c167d58ea80d658e1af956a753f461";
+            hm.src = "//hm.baidu.com/hm.js?15c167d58ea80d658e1af956a753f461";
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(hm, s);
         })();
