@@ -61,7 +61,7 @@
                 canvas.height = bh;
                 document.getElementById("main").style.width = bw + "px";
             }
-            if (canvas.height < bh) canvas.style.marginTop = (bh - canvas.height >> 1) + "px";
+            //if (canvas.height < bh) canvas.style.marginTop = (bh - canvas.height >> 1) + "px";
             var txt = document.getElementById("textContainer");
             txt.style.left = (bw - txt.offsetWidth >> 1) + "px";
             playAudio();
@@ -104,12 +104,12 @@
 </head>
 
 <body onload="startGame();">
+    <div style="text-align:center">
+        <h1>逗斗地主</h1>
+    </div>
     <div id="main" style="width: 1000px;">
-        <div style="text-align:center">
-            <h1>逗斗地主</h1>
-        </div>
-        <canvas id="canvas" width="1000" height="580" style="background-image: url(http://www.riaidea.com/html5/ddz/images/bg.png); background-position: 50% 50%;">Sorry, your browser doesn't support canvas, please use Firefox3.6+, Safari5+, Chrome, IE9+ etc.</canvas>
         <div id="canvasContainer">
+            <canvas id="canvas" width="1000" height="580" style="background-image: url(http://www.riaidea.com/html5/ddz/images/bg.png); background-position: 50% 50%;">Sorry, your browser doesn't support canvas, please use Firefox3.6+, Safari5+, Chrome, IE9+ etc.</canvas>
         </div>
         <div id="textContainer" style="left: 451px;">
             <span id="status"></span>
